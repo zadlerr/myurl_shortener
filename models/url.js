@@ -17,6 +17,7 @@ let url = function(sequelize,DataTypes){
       allowNull:false
   }
   })
+  return url;
 };
 
 module.exports = url;
