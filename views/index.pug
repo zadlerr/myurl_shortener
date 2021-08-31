@@ -4,5 +4,9 @@ block content
   h1 #{title}
   p Welcome to #{title}
   div.form-group
-      input.form-control(placeholder='Enter a URL', name='inputURL', type='url', required=true value='')
-      button(onclick='submitUrl()' type="submit").btn.btn-primary Submit
+    form(action="/",method="POST")
+      div.input-group.mb-3
+        input.form-control(placeholder='Enter a URL', name='inputURL', type='url', required=true value='')
+        button(type="submit").btn.btn-primary Submit
+    if (newHash)
+      p.text-danger This is your new Hash: #{newHash}
