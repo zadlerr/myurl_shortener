@@ -4,13 +4,11 @@ WORKDIR /usr/src/app
 
 COPY package* ./
 
-RUN npm install
+RUN npm ci
 
 # RUN mkdir -p /usr/local/pgsql/data
 
 # RUN initdb -D /usr/local/pgsql/data
-
-# RUN 
 
 COPY . .
 
