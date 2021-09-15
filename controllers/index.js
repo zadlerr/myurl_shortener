@@ -17,10 +17,13 @@ let submitUrl = function(req, res, next) {
   let hashh = createHash(req.body.inputURL);
   console.log("hash: " + hashh);
   console.log(req.body.inputURL);
+  let short = 'zach.ly/' + hashh.substring(10,21);
+  console.log(short);
   return models.Url.create({
     url: req.body.inputURL,
-    hash : hashh
-  }).then( newUrl => {res.render('index', { title: 'Zach\'s URL Shortener', newHash: hashh })} );
+    hash : hashh.substring(10,21),
+    short_url : short
+  }).then( newUrl => {res.render('index', { title: 'Zach\'s URL Shortener', newHash: short })} );
 };
 
 exports.landing = indexFunc;
