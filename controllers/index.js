@@ -26,5 +26,13 @@ let submitUrl = function(req, res, next) {
   }).then( newUrl => {res.render('index', { title: 'Zach\'s URL Shortener', newHash: short })} );
 };
 
+
+let showUrls = function(req,res,next){
+  return models.Url.findAll().then(url => { // leads is the returned obj from findAll()
+    res.render('urls', { title: 'All available hashed Urls',urls: url });
+  });
+};
+
 exports.landing = indexFunc;
 exports.submit_url = submitUrl;
+exports.show_urls = showUrls;
