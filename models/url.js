@@ -15,7 +15,11 @@ let url = function(sequelize,DataTypes){
   hash: {
       type: DataTypes.STRING,
       allowNull:false
-  }
+  },
+  short_url: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }
   })
   return url;
 };
