@@ -1,12 +1,21 @@
-extends layout
+doctype html
+html(lang="en")
+  include common/head.pug
+  +head('Home')
+  body
+    header 
+      include common/navbar.pug
+      +navbar()
+      .container
+        h1 #{title}
+        p Welcome to #{title}
+        div.form-group
+          form(action="/",method="POST")
+            div.input-group.mb-3
+              input.form-control(placeholder='Enter a URL', name='inputURL', type='url', required=true value='')
+              button(type="submit").btn.btn-primary Submit
+          if (newHash)
+            p.text-danger This is your new Hash: #{newHash}
 
-block content
-  h1 #{title}
-  p Welcome to #{title}
-  div.form-group
-    form(action="/",method="POST")
-      div.input-group.mb-3
-        input.form-control(placeholder='Enter a URL', name='inputURL', type='url', required=true value='')
-        button(type="submit").btn.btn-primary Submit
-    if (newHash)
-      p.text-danger This is your new Hash: #{newHash}
+    include common/footer.pug
+        +footer()
