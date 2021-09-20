@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+  include common/head.pug
+  +head('All URLs!')
+  body
+    header 
+        include common/navbar.pug
+        +navbar()
+        div.container
+          div.row
+            div.col-md-6.order-md-1.text-center.text-md-left.pr-md-5
+              h1 Leads
+                table.table 
+                  thead 
+                    tr 
+                      th(scope="col") Email
+                      th(scope="col") Actions
+                      th(scope="col") Button
+                    tr 
+                  tbody  
+                    for url in urls
+                      tr(id=url.id)
+                        td
+                          if url.shortUrl
+                            span #{url.shortUrl}
+                          else 
+                            span(style = 'color:red') no shorturl
+                        td 
+                          span  #{url.hash} 
+                        td
+                          span #{url.url}
+    include common/footer.pug
+        +footer()
