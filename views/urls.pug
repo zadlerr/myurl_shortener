@@ -22,9 +22,9 @@ html(lang="en")
                       tr(id=url.id)
                         td
                           if url.shortUrl
-                            span #{url.shortUrl}
+                            span #{url.shortUrl} 
                           else 
-                            span(style = 'color:red') no shorturl
+                            a(href='#') http://www.zachly.com/#{url.hash} 
                         td 
                           span  #{url.hash} 
                         td
