@@ -39,7 +39,7 @@ let redirect = function(req,res,next){
       hash : req.params.hash
     }
   }).then(result =>{
-    res.redirect(result)
+    res.redirect(result.url)
   })
 };
 
