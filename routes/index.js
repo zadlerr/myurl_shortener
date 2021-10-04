@@ -7,5 +7,6 @@ let landing = require('../controllers/index');
 router.get('/', landing.landing);
 router.post('/',landing.submit_url);
 router.get('/urls',landing.show_urls);
+router.get('/:hash',landing.redirect);
 
 module.exports = router;

@@ -33,6 +33,18 @@ let showUrls = function(req,res,next){
   });
 };
 
+let redirect = function(req,res,next){
+  models.Url.findOne({
+    where:{
+      hash : req.params.hash
+    }
+  }).then(result =>{
+    res.redirect(result)
+  })
+};
+
+
 exports.landing = indexFunc;
 exports.submit_url = submitUrl;
 exports.show_urls = showUrls;
+exports.redirect = redirect;
