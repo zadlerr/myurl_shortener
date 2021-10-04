@@ -39,7 +39,8 @@ let redirect = function(req,res,next){
       hash : req.params.hash
     }
   }).then(result =>{
-    res.redirect(result.url)
+    console.log(result.dataValues.url);
+    res.redirect(result.dataValues.url);
   })
 };
 
