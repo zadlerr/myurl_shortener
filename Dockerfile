@@ -2,7 +2,7 @@ FROM node:14
 
 WORKDIR /usr/src/app
 
-COPY package* ./
+COPY package*.json ./
 
 RUN npm ci
 
@@ -14,4 +14,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD [ "node", "./bin/www" ]
+CMD [ "npm", "start" ]
